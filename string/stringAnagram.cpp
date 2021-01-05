@@ -3,7 +3,7 @@
 // Date: January, 2021
 // Description:
 //  	This program is built by C++
-// 	    If is check the two string is anagram.
+// 	    It checks two strings are match as an anagram or not.
 //      Also, separate and store, based on the same anagram, from the list of words.
 
 #include <iostream>
