@@ -15,6 +15,7 @@
 #include <string.h>
 
 
+
 class StringManipulate
 {
 public:
