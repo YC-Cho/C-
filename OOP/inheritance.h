@@ -1,8 +1,17 @@
+// Filename: inheritace.h
+// By: Younchul Cho
+// Date: January, 2021
+// Description:
+//  	This program is built by C++
+//      This is testing for inheritance and using the template pattern
+// 	    This file contains Base, Book, Paper, and Storage class.
+//          
+
 #include <iostream>
 #include <string>
 #include <vector>
 
-
+// Define Enumeration
 enum type {
     Unknonw = 0,
 	Books = 1,
@@ -11,9 +20,16 @@ enum type {
 };
 
 
+
+/* 
+*	NAME	:	Base
+*	PURPOSE :	This is the super class of Book and Paper.
+*				It has two virtual class that is going to use the child class.
+*/
 class Base
 {
 protected:
+	/*****      Varialbe     ******/
 	std::string name;
 	int type;
 	int year;
@@ -68,7 +84,7 @@ public:
 	}
 
 
-    /*****      Virtual Method     ******/    
+    /*****      Virtual Method     ******/
     /* It going to be overridden in the subclass */
 	virtual void Create(std::string name, int year, int type)
 	{
@@ -87,7 +103,16 @@ public:
 };
 
 
-/* A concrete class that inheritance of Base class */
+
+
+
+
+/* 
+*	NAME	:	Book
+*	PURPOSE :	This is a concrete class that inheritance of Base class.
+*				It has override the Create and Print function.
+*				Also, there are serveral Create function that is overload.
+*/
 class Book : Base
 {
 private:
@@ -131,7 +156,7 @@ public:
 
 
     /*****      Override Method     ******/
-    // Also, overload the function
+    // Also, overload(Create function) the function
 	void Create()
 	{
 		Base::Create("Unknown", 1900, Books);
@@ -172,7 +197,14 @@ public:
 };
 
 
-/* A concrete class that inheritance of Base class */
+
+
+/* 
+*	NAME	:	Paper
+*	PURPOSE :	This is a concrete class that inheritance of Base class.
+*				It has override the Create and Print function.
+*				Also, there are serveral Create function that is overload.
+*/
 class Paper : Base
 {
 private:
@@ -242,7 +274,14 @@ public:
 
 
 
-// A Storage Class that stores the book, paper, etc
+
+
+/* 
+*	NAME	:	Storage
+*	PURPOSE :	This is a concrete class that is going to store the Base and child of Base class.
+*				It has vector to store Base class type.
+*				It will insert, remove, and print the information.
+*/
 class Storage
 {
 private:
@@ -279,7 +318,6 @@ public:
 	}
 
 
-
     /*  Remove the object into the storage */
 	void Remove(std::string name)
 	{	
@@ -295,6 +333,8 @@ public:
 			}
 		}
 	}
+
+
 
     /*  Print out the detailed  information that is stored */
     void Print()
